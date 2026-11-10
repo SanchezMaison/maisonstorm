@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Perfumes · Storm Maison</title><meta name="theme-color" content="#050608"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 fill=%27%23e10600%27/%3E%3Ctext x=%2732%27 y=%2751%27 font-size=%2752%27 text-anchor=%27middle%27 fill=%27%23050608%27 font-family=%27serif%27 font-weight=%27bold%27%3ES%3C/text%3E%3C/svg%3E"><meta name="description" content="Perfumes, ropa y piezas selectas. Consulta disponibilidad por WhatsApp."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Sedgwick+Ave+Display&family=Permanent+Marker&family=Pirata+One&family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet"><style>
+:root{--ink:#050608;--white:#f4f6fb;--red:#e10600;--sky:#ff8a80;--gray:#8a91a3;--goth:'UnifrakturCook','Old English Text MT',serif;--graf:'Sedgwick Ave Display','Permanent Marker',cursive;--marker:'Permanent Marker','Marker Felt',cursive;--pirata:'Pirata One','UnifrakturCook',serif;--sans:'Archivo','Arial Narrow',Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--white);font-family:var(--sans);font-stretch:80%;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+body.lock{overflow:hidden}
+.bar{position:fixed;inset:0 0 auto 0;z-index:30;display:grid;grid-template-columns:3rem 1fr 3rem;align-items:center;padding:max(.9rem,env(safe-area-inset-top)) clamp(1rem,4vw,2.5rem) .9rem;mix-blend-mode:difference;color:#fff}
+.bar .logo{font-family:var(--goth);font-size:1.8rem;text-align:center}
+.burger{width:2.6rem;height:2.6rem;background:none;border:0;cursor:pointer;display:grid;align-content:center;gap:7px}
+.burger i{display:block;height:2px;background:#fff;transition:transform .4s,opacity .3s}
+.burger i:nth-child(2){width:70%}
+.burger[aria-expanded=true] i:nth-child(1){transform:translateY(9px) rotate(45deg)}
+.burger[aria-expanded=true] i:nth-child(2){opacity:0}
+.burger[aria-expanded=true] i:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
+.menu{position:fixed;inset:0;z-index:25;background:var(--red);display:flex;flex-direction:column;justify-content:center;padding:0 clamp(1.5rem,6vw,5rem);clip-path:circle(0 at 2.5rem 2.2rem);transition:clip-path .7s cubic-bezier(.7,0,.2,1);visibility:hidden}
+.menu.open{clip-path:circle(150% at 2.5rem 2.2rem);visibility:visible}
+.menu a{font-family:var(--goth);font-size:clamp(3rem,12vw,8rem);line-height:1.05;color:var(--ink);width:fit-content;transition:transform .3s,color .3s}
+.menu a:hover,.menu a[aria-current]{transform:translateX(1.5rem) skewX(-6deg);color:var(--white)}
+.menu small{margin-top:2rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--ink)}
+.tape{background:var(--red);color:var(--ink);overflow:hidden;white-space:nowrap;transform:rotate(-1.5deg) scale(1.03);border-block:3px solid var(--ink);position:relative;z-index:2}
+.tape div{display:inline-block;padding:.5rem 0;font-family:var(--goth);font-size:2.2rem;animation:run 22s linear infinite}
+.tape:hover div{animation-play-state:paused}
+@keyframes run{to{transform:translateX(-50%)}}
+.card{border:2px solid var(--white);display:flex;flex-direction:column;background:var(--ink);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.card:hover{transform:translateY(-10px) rotate(-1.2deg)}
+.pic{aspect-ratio:4/5;display:grid;place-items:center;font-family:var(--catfont,var(--goth));font-size:9rem;color:var(--red);overflow:hidden;border-bottom:2px solid var(--white)}
+.pic img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.card:hover .pic img{transform:scale(1.08)}
+.pic span{transition:transform .5s,color .5s}
+.card:hover .pic span{transform:scale(1.25) rotate(6deg);color:var(--white)}
+.info{padding:1rem;display:grid;gap:.3rem}
+.info h3{font-family:var(--pirata);font-size:1.9rem;font-weight:400;line-height:1}
+.info em{font-style:normal;color:var(--gray);font-weight:600}
+.buy{display:block;background:var(--red);color:#fff;text-align:center;padding:.85rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.85rem;transition:background .2s,color .2s}
+.buy:hover{background:var(--white);color:var(--ink)}
+.door{display:block;position:relative;overflow:hidden;padding:clamp(2rem,6vw,4rem) clamp(1rem,4vw,2.5rem);border-top:2px solid var(--white)}
+.door::before{content:"";position:absolute;inset:0;background:var(--red);transform:translateX(-101%);transition:transform .5s cubic-bezier(.7,0,.2,1)}
+.door:hover::before,.door:focus-visible::before{transform:none}
+.door>*{position:relative}
+.door.light{background:var(--white);color:var(--ink)}
+.door h2{font-family:var(--goth);font-weight:700;font-size:clamp(4rem,17vw,14rem);line-height:.85}
+.door p{font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-top:.8rem}
+.door .go{position:absolute;right:clamp(1rem,4vw,2.5rem);top:50%;font-size:clamp(2.5rem,7vw,5rem);transform:translateY(-50%);transition:transform .4s}
+.door:hover .go{transform:translate(-1rem,-50%)}
+footer{background:var(--red);color:var(--ink);padding:5rem clamp(1rem,4vw,2.5rem) 2rem;text-align:center;overflow:hidden}
+footer h2{font-family:var(--goth);font-size:clamp(4rem,17vw,15rem);line-height:.85;margin-bottom:1.5rem}
+footer .buy{display:inline-block;background:var(--ink);padding:1rem 2.2rem}
+footer small{display:block;margin-top:2.5rem;font-weight:700}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+.wafab{bottom:max(1rem,env(safe-area-inset-bottom))}
+html,body{overflow-x:clip;max-width:100%}
+.card{min-width:0}
+.pic{position:relative;min-width:0}
+.pic img{position:absolute;inset:0}
+.info h3{overflow-wrap:anywhere}
+.search input{min-width:0}
+footer{padding-bottom:max(2rem,env(safe-area-inset-bottom))}
+@media (hover:none),(pointer:coarse){.card:hover{transform:none}.card:hover .pic img,.card:hover .pic span{transform:none}}
+@media (max-width:640px){
+ .door .go{display:none}
+ .hero p{bottom:5.5rem}
+ .tape div{font-size:1.7rem}
+ .bar .logo{font-size:1.5rem}
+ .info{padding:.7rem}
+ .info h3{font-size:1.5rem}
+ .buy{padding:.75rem;font-size:.75rem;letter-spacing:.08em}
+ .pic{font-size:5.5rem}
+}
+@media (max-width:380px){.menu a{font-size:2.6rem}}
+.f-goth{font-family:var(--goth)!important;font-weight:700}
+.f-graf{font-family:var(--graf)!important;font-weight:400}
+.f-marker{font-family:var(--marker)!important;font-weight:400}
+.f-pirata{font-family:var(--pirata)!important;font-weight:400}
+.door h2.f-marker,.phead h1.f-marker{font-size:clamp(3.2rem,14vw,11rem);line-height:1}
+.door h2.f-graf,.phead h1.f-graf{font-size:clamp(3.8rem,16vw,13rem);line-height:1}
+.menu a.f-marker{font-size:clamp(2.6rem,10vw,6.5rem)}
+.menu a.f-pirata{font-size:clamp(2.6rem,10vw,6rem)}
+.tape b{font-weight:400}
+.skip{position:fixed;left:1rem;top:-5rem;z-index:60;background:var(--white);color:var(--ink);padding:.7rem 1rem;font-weight:800}
+.skip:focus{top:1rem}
+.curtain{position:fixed;inset:0;z-index:50;background:var(--red);transform:translateY(-101%);transition:transform .55s cubic-bezier(.7,0,.2,1);pointer-events:none}
+.wafab{position:fixed;right:1rem;bottom:1rem;z-index:20;background:var(--red);color:#fff;font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;padding:.9rem 1.1rem;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--white);transition:transform .2s,box-shadow .2s}
+.wafab:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--white)}
+.flinks{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.flinks a:hover{text-decoration:underline}
+button.pic{border:0;border-bottom:2px solid var(--white);background:none;width:100%;cursor:zoom-in}
+.dlg{position:fixed;inset:0;z-index:40;background:rgba(5,6,8,.93);display:grid;place-items:center;padding:1rem}
+.dlg[hidden]{display:none}
+.dlg-in{position:relative;width:min(900px,100%);max-height:100%;overflow:auto;display:grid;grid-template-columns:1.1fr 1fr;border:2px solid var(--white);background:var(--ink);animation:slap .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes slap{from{transform:scale(1.06) rotate(-2deg);opacity:0}}
+.dlg-pic{aspect-ratio:4/5;display:grid;place-items:center;background:#000;font-family:var(--catfont,var(--goth));font-size:12rem;color:var(--red);overflow:hidden}
+.dlg-pic img{width:100%;height:100%;object-fit:contain}
+.dlg-info{padding:1.5rem;display:flex;flex-direction:column;gap:.6rem;justify-content:flex-end}
+.dlg-info h3{font-family:var(--pirata);font-size:3.2rem;line-height:1;font-weight:400}
+.dlg-info em{font-style:normal;font-weight:600;color:var(--gray)}
+.dlg-info b{font-size:1.3rem}
+.dlg-info .buy{margin-top:.8rem}
+.dlg-nav{display:flex;gap:.5rem;margin-top:1rem}
+.dlg-nav button{width:3rem;height:3rem;border:2px solid var(--white);background:none;color:var(--white);font-size:1.4rem;cursor:pointer;transition:background .2s,border-color .2s}
+.dlg-nav button:hover{background:var(--red);border-color:var(--red)}
+.dlg-x{position:absolute;right:.7rem;top:.2rem;z-index:2;background:none;border:0;color:var(--white);font-size:2.6rem;line-height:1;cursor:pointer;mix-blend-mode:difference}
+@media (max-width:700px){.dlg-in{grid-template-columns:1fr}.dlg-pic{aspect-ratio:1/1;font-size:8rem}}
+
+.phead{padding:7rem clamp(1rem,4vw,2.5rem) 1rem}
+.phead h1{font-family:var(--goth);font-weight:700;font-size:clamp(5rem,22vw,18rem);line-height:.85;animation:open 1s cubic-bezier(.7,0,.2,1) both}
+@keyframes open{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+.phead p{margin-top:1rem;font-weight:700;font-size:1.15rem;color:var(--gray);max-width:36ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(250px,100%),1fr));gap:1.2rem;padding:1.8rem clamp(1rem,4vw,2.5rem) 5rem}
+.search{padding:1.5rem clamp(1rem,4vw,2.5rem) 0;display:flex;gap:1rem;align-items:baseline;flex-wrap:wrap}
+.search input{flex:1 1 280px;background:none;border:0;border-bottom:3px solid var(--white);border-radius:0;color:var(--white);font:800 clamp(1.4rem,4vw,2.4rem)/1.2 var(--sans);font-stretch:80%;padding:.4rem 0;outline:0;transition:border-color .2s}
+.search input::placeholder{color:var(--gray)}
+.search input:focus{border-color:var(--red)}
+#count{font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);font-size:.85rem}
+.empty{grid-column:1/-1;font-weight:700;font-size:1.2rem}
+.empty a{color:var(--red);text-decoration:underline}
+@media (max-width:640px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;padding-inline:.8rem}.phead{padding-top:6rem}.search input{font-size:1.35rem}}
+:root{--catfont:var(--graf)}
+/* Botones alineados: el texto ocupa el espacio sobrante y el botón queda abajo */
+.info{display:flex;flex-direction:column;gap:.3rem;flex:1}
+.info b{margin-top:auto;padding-top:.6rem}
+</style></head><body><a class="skip" href="#main">Ir al contenido</a><div class="curtain" id="curtain"></div><a class="wafab" id="wafab" href="#" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">WhatsApp</a><div class="bar"><button class="burger" id="mbtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button><a class="logo" href="index.html">Storm Maison</a><span></span></div><nav class="menu" id="menu" aria-label="Principal"><a class="f-goth" href="index.html">Inicio</a><a class="f-graf" href="perfumes.html" aria-current="page">Perfumes</a><a class="f-marker" href="ropa.html">Ropa</a><a class="f-goth" href="selectos.html">Selectos</a><a class="f-pirata" href="#contacto">Contacto</a><small>Envíos y disponibilidad por WhatsApp</small></nav><main id="main"><header class="phead"><h1 class="f-graf">Perfumes</h1><p>Fragancias para cada ocasión.</p></header><div class="search"><input id="q" type="search" aria-label="Buscar productos" autocomplete="off"><span id="count" aria-live="polite"></span></div><div class="grid" id="grid"></div><div class="tape" aria-hidden="true"><div id="tape"></div></div><a class="door" href="ropa.html"><h2 class="f-marker">Ropa</h2><p>Siguiente</p><span class="go" aria-hidden="true">›</span></a></main><footer id="contacto"><h2><span class="f-goth">Storm</span> <span class="f-graf">Maison</span></h2><a class="buy" id="foot-wa" href="#" target="_blank" rel="noopener">Escríbenos por WhatsApp</a><nav class="flinks" aria-label="Secciones"><a href="perfumes.html">Perfumes</a><a href="ropa.html">Ropa</a><a href="selectos.html">Selectos</a></nav><small>Calidad, buen trato y buenos precios.</small></footer><script>
+const WHATSAPP="527205503984";
+const wa=t=>"https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(t);
+document.getElementById("foot-wa").href=wa("Hola, quiero información de Storm Maison.");
+document.getElementById("tape").innerHTML=Array(8).fill('<b class="f-graf">Perfumes</b> ✦ <b class="f-marker">Ropa</b> ✦ <b class="f-goth">Selectos</b> ✦ ').join("");
+const menu=document.getElementById("menu"),mbtn=document.getElementById("mbtn");
+const toggle=o=>{menu.classList.toggle("open",o);mbtn.setAttribute("aria-expanded",o);mbtn.setAttribute("aria-label",o?"Cerrar menú":"Abrir menú");document.body.classList.toggle("lock",o)};
+mbtn.onclick=()=>toggle(!menu.classList.contains("open"));
+menu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>toggle(false)));
+addEventListener("keydown",e=>{if(e.key==="Escape")toggle(false)});
+document.getElementById("wafab").href=wa("Hola, quiero información de Storm Maison.");
+const curt=document.getElementById("curtain"),calm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const hideCurt=()=>{curt.style.transform="translateY(-101%)"};
+if(!calm){curt.style.transition="none";curt.style.transform="none";void curt.offsetWidth;curt.style.transition="";requestAnimationFrame(()=>requestAnimationFrame(hideCurt))}
+addEventListener("pageshow",e=>{if(e.persisted){curt.style.transition="none";hideCurt()}});
+document.addEventListener("click",e=>{
+ const a=e.target.closest("a[href]");
+ if(!a||calm||e.metaKey||e.ctrlKey||e.shiftKey||a.target==="_blank")return;
+ const u=new URL(a.href,location.href);
+ if(u.origin!==location.origin||u.pathname===location.pathname)return;
+ e.preventDefault();
+ curt.style.transition="none";curt.style.transform="translateY(101%)";void curt.offsetWidth;curt.style.transition="";curt.style.transform="none";
+ setTimeout(()=>{location.href=a.href},560);
+});
+const SECCION="Perfumes";
+
+// ====== Edita aquí: "img" es opcional (ruta de la imagen), "precio" puede ir vacío ======
+const PRODUCTOS=[
+ {
+  "nombre": "Jean Paul Gaultier Le Beau",
+  "detalle": "Eau De Toilet 125ml, Coco y Bergamota.",
+  "precio": "$1,950 MXN",
+  "img": "perfume001.jpg"
+ },
+ {
+  "nombre": "Hugo Boss Bottled Night",
+  "detalle": "Eau de Toilette 100ml, Lavanda, Abedul y Violeta.",
+  "precio": "$1,000 MXN",
+  "img": "perfume002.jpg"
+ },
+ {
+  "nombre": "Hawas Ice",
+  "detalle": "Eau de Parfum · 100ml",
+  "precio": "",
+  "img": "perfume003.jpg"
+ },
+ {
+  "nombre": "Maison Margiela Replica Bubble Bath",
+  "detalle": "Eau de Toilette 100 ml, Bergamota, Lavanda y Coco.",
+  "precio": "$3,550 MXN",
+  "img": "perfume004.jpg"
+ },
+ {
+  "nombre": "Valentino Donna Born In Roma",
+  "detalle": "Eau de Parfum Toilette 100 ml, Grosella, Jazmín y Vainilla.",
+  "precio": "$2,590 MXN",
+  "img": "perfume005.jpg"
+ },
+ {
+  "nombre": "AZZARO Forever Wanted Elixir",
+  "detalle": "Elixir 100 ml, Frambuesa, Cuero y Amberwood.",
+  "precio": "$2,750",
+  "img": "perfume006.jpg"
+ },
+ {
+  "nombre": "Jean Paul Gaultier Le Beau",
+  "detalle": "Eau de Parfum 125 ml, Piña, Sándalo y Coco.",
+  "precio": "$2,650 MXN",
+  "img": "perfume007.jpg"
+ },
+ {
+  "nombre": "Al Haramain Amber Oud - Aqua Dubai",
+  "detalle": "Eau de Parfum 75 ml, Mandarina, Melón y Almizcle.",
+  "precio": "$1,300 MXN",
+  "img": "perfume008.jpg"
+ }
+];
+// ========================
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const grid=document.getElementById("grid"),q=document.getElementById("q"),count=document.getElementById("count");
+q.placeholder="Buscar en "+SECCION;
+const card=p=>`<article class="card"><button class="pic" data-i="${PRODUCTOS.indexOf(p)}" aria-label="Ver ${esc(p.nombre)}">${p.img?`<img src="${esc(p.img)}" alt="${esc(SECCION+' '+p.nombre)}" loading="lazy">`:`<span>${esc(p.nombre[0])}</span>`}</button><div class="info"><h3>${esc(p.nombre)}</h3><em>${esc(p.detalle)}</em><b>${p.precio?esc(p.precio):"Consulta el precio"}</b></div><a class="buy" target="_blank" rel="noopener" href="${wa("Hola, quiero consultar disponibilidad de: "+SECCION+" "+p.nombre)}">Lo quiero</a></article>`;
+const norm=s=>String(s).toLowerCase().normalize("NFD").split("").filter(c=>c.charCodeAt(0)<768||c.charCodeAt(0)>879).join("");
+const draw=()=>{
+ const t=norm(q.value.trim());
+ const l=PRODUCTOS.filter(p=>norm(p.nombre+" "+p.detalle).includes(t));
+ grid.innerHTML=l.length?l.map(card).join(""):`<p class="empty">${PRODUCTOS.length?"No encontramos «"+esc(q.value)+"» en "+SECCION+".":"Pronto habrá piezas."} <a href="${wa("Hola, busco en "+SECCION+": "+q.value)}" target="_blank" rel="noopener">Pregúntanos por WhatsApp</a></p>`;
+ count.textContent=t?l.length+" de "+PRODUCTOS.length:PRODUCTOS.length+(PRODUCTOS.length===1?" pieza":" piezas");
+};
+q.addEventListener("input",draw);draw();
+const dlg=document.createElement("div");
+dlg.className="dlg";dlg.hidden=true;dlg.setAttribute("role","dialog");dlg.setAttribute("aria-modal","true");dlg.setAttribute("aria-label","Detalle del producto");
+dlg.innerHTML='<div class="dlg-in"><button class="dlg-x" aria-label="Cerrar">×</button><div class="dlg-pic"></div><div class="dlg-info"><h3></h3><em></em><b></b><div class="dlg-nav"><button class="dlg-p" aria-label="Anterior">‹</button><button class="dlg-s" aria-label="Siguiente">›</button></div><a class="buy" target="_blank" rel="noopener">Lo quiero</a></div></div>';
+document.body.appendChild(dlg);
+let ix=0;
+const $=x=>dlg.querySelector(x);
+const show=i=>{ix=(i+PRODUCTOS.length)%PRODUCTOS.length;const p=PRODUCTOS[ix];
+ $(".dlg-pic").innerHTML=p.img?'<img src="'+esc(p.img)+'" alt="'+esc(SECCION+" "+p.nombre)+'">':"<span>"+esc(p.nombre[0])+"</span>";
+ $("h3").textContent=p.nombre;$("em").textContent=p.detalle;$("b").textContent=p.precio||"Consulta el precio";
+ $(".buy").href=wa("Hola, quiero consultar disponibilidad de: "+SECCION+" "+p.nombre)};
+const closeD=()=>{dlg.hidden=true;document.body.classList.remove("lock")};
+grid.addEventListener("click",e=>{const b=e.target.closest(".pic");if(!b)return;show(+b.dataset.i);dlg.hidden=false;document.body.classList.add("lock");$(".dlg-x").focus()});
+dlg.addEventListener("click",e=>{if(e.target===dlg||e.target.closest(".dlg-x"))closeD();if(e.target.closest(".dlg-p"))show(ix-1);if(e.target.closest(".dlg-s"))show(ix+1)});
+addEventListener("keydown",e=>{if(dlg.hidden)return;if(e.key==="Escape")closeD();if(e.key==="ArrowRight")show(ix+1);if(e.key==="ArrowLeft")show(ix-1)});
+</script></body></html>
